@@ -1,0 +1,23 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(430px, 1fr));
+  grid-template-rows: repeat(auto-fit, 430px);
+  grid-auto-flow: dense;
+  grid-gap: 0.5rem;
+}
+
+#search {
+  margin-right: 20px;
+}
+
+.container > div {
+
+  width: 400px;
+  height: auto;
+}
+
+.centerBtn {
+  text-align: center;
+  position: relative;
+  margin: auto;
+}

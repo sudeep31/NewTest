@@ -1,0 +1,26 @@
+<div class="centerBtn">
+<input id="search"  placeholder="search">
+<button class="centerBtn" (click)="findGif()">Search</button>
+</div>
+
+
+<hr>
+
+<!-- <div class="row" *ngFor="let images of holdGitImages[0]; let i = index">
+  <div class="column">
+    <figure>
+      <img [src]='images.images.downsized.url' alt="Trulli" style="width:100%">
+      <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>
+    </figure>
+  </div>
+</div> -->
+
+<div class="container" >
+    <div class="displayInnerDIV" *ngFor="let images of holdGitImages[0]">
+      <figure>
+        <img [src]='images.images.downsized.url' alt="Trulli" style="width:100%">
+        <figcaption>trending_datetime {{images.trending_datetime}}</figcaption>
+      </figure>
+    </div>
+
+</div>

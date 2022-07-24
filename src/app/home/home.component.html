@@ -6,6 +6,11 @@
 
 <hr>
 
+<ng-container *ngIf="displayError && displayError != ''">
+  <hr class="error">
+   <div class="error"> {{displayError}} </div>
+  <hr>
+</ng-container>
 <!-- <div class="row" *ngFor="let images of holdGitImages[0]; let i = index">
   <div class="column">
     <figure>

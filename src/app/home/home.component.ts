@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   @Input() item = { name: "" };
   @Output() newItemEvent = new EventEmitter();
   holdGitImages: any = [];
+  displayError: any;
   constructor(public getGifImageService: GetGifImagesService) { }
 
   ngOnInit(): void {
@@ -21,11 +22,12 @@ export class HomeComponent implements OnInit {
   findGif() {
 
     let getValue = <HTMLInputElement>document.getElementById("search");
-
+    this.displayError = ""
     if (getValue && getValue.value != '' && getValue.value != undefined) {
       this.DisplayGif(getValue);
+
     } else {
-      alert("please fill the data")
+      this.displayError = "please fill the data"
     }
 
 
@@ -35,6 +37,7 @@ export class HomeComponent implements OnInit {
   }
 
   DisplayGif(data: any) {
+    this.displayError = "No records found"
     this.getGifImageService.getGifImageService(data).subscribe((res: any) => {
       let data = [];
       if (res && res.data.length > 1)
